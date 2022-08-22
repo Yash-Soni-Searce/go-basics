@@ -52,15 +52,16 @@ func newdeckfromfile(filename string) deck {
 		os.Exit(1)
 	}
 	s := string(read)
-	return strings.Split(s,",")
+	return strings.Split(s, ",")
 }
 
-func (d deck) shuffle(){
+func (d deck) shuffle() {
 	source := rand.NewSource(time.Now().UnixNano())
-	r :=rand.New(source)
+	r := rand.New(source)
 
-	for i := range d{
-		newposition := r.Intn(len(d)-1)
+	for i := range d {
+		newposition := r.Intn(len(d) - 1)
 		d[i], d[newposition] = d[newposition], d[i]
 	}
 }
+
