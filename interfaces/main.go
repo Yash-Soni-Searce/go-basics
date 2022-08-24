@@ -6,9 +6,9 @@ type bot interface {
 	getgreeting() string
 }
 
-type englishbot struct {}
+type englishbot struct{}
 
-type spanishbot struct {}
+type spanishbot struct{}
 
 func printing(a bot) {
 	fmt.Println(a.getgreeting())
@@ -29,3 +29,4 @@ func main() {
 	printing(eb)
 	printing(sb)
 }
+//check for updated name
