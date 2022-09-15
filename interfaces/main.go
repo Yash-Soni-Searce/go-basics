@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type bot interface {
-	getgreeting(x string, y string) string
+	getgreeting() string
 }
 
 type GCP struct{
