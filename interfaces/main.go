@@ -3,28 +3,33 @@ package main
 import "fmt"
 
 type bot interface {
-	getgreeting() string
+	getgreeting(x string, y string) string
 }
 
-type englishbot struct{}
+type GCP struct{
+	a string
+	b string
+}
 
-type spanishbot struct{}
+type AWS struct{
+	a string
+}
 
 func printing(a bot) {
 	fmt.Println(a.getgreeting())
 }
 
-func (englishbot) getgreeting() string {
+func (GCP) getgreeting() string {
 	return "hii"
 }
 
-func (spanishbot) getgreeting() string {
+func (AWS) getgreeting() string {
 	return "hola"
 }
 
 func main() {
-	eb := englishbot{}
-	sb := spanishbot{}
+	eb := GCP{}
+	sb := AWS{}
 
 	printing(eb)
 	printing(sb)
