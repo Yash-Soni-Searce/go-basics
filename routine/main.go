@@ -12,7 +12,7 @@ func main() {
 	}
 
 	for _,link := range links {
-		check(link)
+		go check(link)
 	}
 }
 
