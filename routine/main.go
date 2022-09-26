@@ -18,6 +18,7 @@ func main() {
 		go check(link, c)
 		fmt.Println(<- c)
 	}
+	close(c)
 }
 
 func check(link string, c chan string) {
